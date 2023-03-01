@@ -53,6 +53,12 @@ public class Course {
     public String getCourseName() {
         return courseName;
     }
+    public List<Instructor> getInstructors() {
+        return instructors;
+    }
+    public void setInstructors(List<Instructor> instructors) {
+        this.instructors = instructors;
+    }
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
