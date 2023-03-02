@@ -3,6 +3,8 @@ package com.edumy.edumy.entity;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -18,7 +20,7 @@ public class Feedback {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "feedback_id")
-    private Integer feedbackId;
+    private Integer id;
     public Instructor getInstructor() {
         return instructor;
     }
@@ -31,12 +33,13 @@ public class Feedback {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "instructor_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
     private Instructor instructor;
     public Integer getFeedbackId() {
-        return feedbackId;
+        return id;
     }
-    public void setFeedbackId(Integer feedbackId) {
-        this.feedbackId = feedbackId;
+    public void setFeedbackId(Integer id) {
+        this.id = id;
     }
     public Double getRating() {
         return rating;

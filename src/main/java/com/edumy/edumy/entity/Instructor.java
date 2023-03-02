@@ -1,5 +1,8 @@
 package com.edumy.edumy.entity;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -17,7 +20,7 @@ public class Instructor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "instructor_id")
-    private Integer instructorId;
+    private Integer id;
     @Column(name = "instructor_name")
     private String instructorName;
     private Long mobile;
@@ -27,21 +30,17 @@ public class Instructor {
 
     @ManyToMany(fetch = FetchType.LAZY,
       cascade = {
-          CascadeType.PERSIST,
-          CascadeType.MERGE
-      },
-      mappedBy = "instructors")
-    private List<Course> courses;
+          CascadeType.ALL
+    },
+    mappedBy = "instructors")
+    @JsonIgnore
+    private List<Course> courses = new ArrayList<>();
 
-    // @OneToMany(fetch = FetchType.LAZY)
-    // @JoinColumn(name = "feedback_id")
-    // @OnDelete(action = OnDeleteAction.CASCADE)
-    // private List<Feedback> feedbacks;
     public Integer getInstructorId() {
-        return instructorId;
+        return id;
     }
-    public void setInstructorId(Integer instructorId) {
-        this.instructorId = instructorId;
+    public void setInstructorId(Integer id) {
+        this.id = id;
     }
     public String getInstructorName() {
         return instructorName;
@@ -79,12 +78,6 @@ public class Instructor {
     public void setCourses(List<Course> courses) {
         this.courses = courses;
     }
-    // public List<Feedback> getFeedbacks() {
-    //     return feedbacks;
-    // }
-    // public void setFeedbacks(List<Feedback> feedbacks) {
-    //     this.feedbacks = feedbacks;
-    // }
     public Instructor() {
 
     }

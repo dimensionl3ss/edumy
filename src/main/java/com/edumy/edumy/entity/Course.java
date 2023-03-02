@@ -1,5 +1,6 @@
 package com.edumy.edumy.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -21,7 +22,7 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "course_id")
-    private Integer courseId;
+    private Integer id;
     @Column(name = "course_name")
     private String courseName;
     private String description;
@@ -34,21 +35,20 @@ public class Course {
     
     @ManyToMany(fetch = FetchType.LAZY,
       cascade = {
-          CascadeType.PERSIST,
-          CascadeType.MERGE
+          CascadeType.ALL
       })
     @JoinTable(name = "courses_by_instructors",
         joinColumns = { @JoinColumn(name = "course_id") },
         inverseJoinColumns = { @JoinColumn(name = "instructor_id") })
-    private List<Instructor> instructors;
+    private List<Instructor> instructors = new ArrayList<>();
     private Integer price;
-    @Column(name = "duration_in_weeks")
+    @Column(name = "duration_in_weeks")  
     private Integer durationInWeeks;
     public Integer getCourseId() {
-        return courseId;
+        return id;
     }
-    public void setCourseId(Integer courseId) {
-        this.courseId = courseId;
+    public void setCourseId(Integer id) {
+        this.id = id;
     }
     public String getCourseName() {
         return courseName;
