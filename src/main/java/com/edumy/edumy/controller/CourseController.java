@@ -1,6 +1,7 @@
 package com.edumy.edumy.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.edumy.edumy.dto.CourseDTO;
 import com.edumy.edumy.entity.Course;
 import com.edumy.edumy.entity.Review;
 import com.edumy.edumy.repository.CourseRepository;
@@ -21,20 +23,15 @@ public class CourseController {
     @Autowired private CourseRepository courseRepository;
     @Autowired private ReviewRepository reviewRepository;
     @PostMapping
-    Course addACourse(@RequestBody Course course) {
-        Course newCourse = new Course();
-        newCourse.setCourseName(course.getCourseName());
-        newCourse.setDescription(course.getDescription());
-        newCourse.setDurationInWeeks(course.getDurationInWeeks());
-        newCourse.setPrice(course.getPrice());
-        newCourse.setLevel(course.getLevel());
-        newCourse.setInstructors(course.getInstructors());
-        return courseRepository.save(newCourse);
+    Course addACourse(@RequestBody CourseDTO courseDTO) {
+        Course course = CourseDTO.ValueOf(courseDTO);
+        return courseRepository.save(course);
     }
     @GetMapping
-    List<Course> getCourse() {
-        List<Course> result = courseRepository.findAll();
-        return result;
+    List<CourseDTO> getCourse() {
+        List<Course> courses = courseRepository.findAll();
+        List<CourseDTO> courseDTOs = courses.stream().map(course -> CourseDTO.getDTO(course)).collect(Collectors.toList());
+        return courseDTOs;
     }
     @PostMapping("/{courseId}/reviews")
     Review addAReview(@PathVariable int courseId, @RequestBody Review review) {

@@ -36,10 +36,10 @@ public class Instructor {
     @JsonIgnore
     private List<Course> courses = new ArrayList<>();
 
-    public Integer getInstructorId() {
+    public Integer getId() {
         return id;
     }
-    public void setInstructorId(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getInstructorName() {

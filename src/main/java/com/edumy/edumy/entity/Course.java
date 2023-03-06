@@ -44,10 +44,10 @@ public class Course {
     private Integer price;
     @Column(name = "duration_in_weeks")  
     private Integer durationInWeeks;
-    public Integer getCourseId() {
+    public Integer getId() {
         return id;
     }
-    public void setCourseId(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getCourseName() {
