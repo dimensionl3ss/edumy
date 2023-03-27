@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import com.edumy.edumy.entity.Course;
 import com.edumy.edumy.entity.Instructor;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 public class CourseDTO {
@@ -15,6 +16,7 @@ public class CourseDTO {
     private String description;
     private String level;
 
+    @JsonProperty("instructors")
     private List<InstructorDTO> instructorDTOs = new ArrayList<>();
     private Integer price;
     private Integer durationInWeeks;
