@@ -6,6 +6,13 @@ public class InstructorDTO {
     
     private Integer id;
     private String instructorName;
+    private String instructorEmail;
+    public String getInstructorEmail() {
+        return instructorEmail;
+    }
+    public void setInstructorEmail(String instructorEmail) {
+        this.instructorEmail = instructorEmail;
+    }
     private Long mobile;
     private String address;
     private Integer pincode;
@@ -51,6 +58,7 @@ public class InstructorDTO {
         Instructor instructor = new Instructor();
         instructor.setId(instructorDTO.getId());
         instructor.setInstructorName(instructorDTO.getInstructorName());
+        instructor.setInstructorEmail(instructorDTO.getInstructorEmail());
         instructor.setAddress(instructorDTO.getAddress());
         instructor.setMobile(instructorDTO.getMobile());
         instructor.setPincode(instructorDTO.getPincode());
@@ -62,6 +70,7 @@ public class InstructorDTO {
         InstructorDTO instructorDTO = new InstructorDTO();
         instructorDTO.setId(instructor.getId());
         instructorDTO.setInstructorName(instructor.getInstructorName());
+        instructorDTO.setInstructorEmail(instructor.getInstructorEmail());
         instructorDTO.setAddress(instructor.getAddress());
         instructorDTO.setMobile(instructor.getMobile());
         instructorDTO.setPincode(instructor.getPincode());

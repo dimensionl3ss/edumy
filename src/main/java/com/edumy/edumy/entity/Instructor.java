@@ -23,6 +23,13 @@ public class Instructor {
     private Integer id;
     @Column(name = "instructor_name")
     private String instructorName;
+    private String instructorEmail;
+    public String getInstructorEmail() {
+        return instructorEmail;
+    }
+    public void setInstructorEmail(String instructorEmail) {
+        this.instructorEmail = instructorEmail;
+    }
     private Long mobile;
     private String address;
     private Integer pincode;
