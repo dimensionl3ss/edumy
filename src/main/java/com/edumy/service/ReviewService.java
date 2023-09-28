@@ -1,8 +1,8 @@
-package com.edumy.edumy.service;
+package com.edumy.service;
 
 import java.util.List;
 
-import com.edumy.edumy.dto.ReviewDTO;
+import com.edumy.dto.ReviewDTO;
 
 public interface ReviewService {
     List<ReviewDTO> getReviewByCourseId(int courseId);

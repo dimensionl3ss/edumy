@@ -1,11 +1,11 @@
-package com.edumy.edumy.dto;
+package com.edumy.dto;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.edumy.edumy.entity.Course;
-import com.edumy.edumy.entity.Instructor;
+import com.edumy.entity.Course;
+import com.edumy.entity.Instructor;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 

@@ -1,4 +1,4 @@
-package com.edumy.edumy.entity;
+package com.edumy.entity;
 import java.util.ArrayList;
 import java.util.List;
 

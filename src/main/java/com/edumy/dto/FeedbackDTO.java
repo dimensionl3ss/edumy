@@ -1,6 +1,6 @@
-package com.edumy.edumy.dto;
+package com.edumy.dto;
 
-import com.edumy.edumy.entity.Feedback;
+import com.edumy.entity.Feedback;
 
 public class FeedbackDTO {
     private Integer feedbackId;

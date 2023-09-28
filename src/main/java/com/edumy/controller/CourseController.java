@@ -1,4 +1,4 @@
-package com.edumy.edumy.controller;
+package com.edumy.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.edumy.edumy.dto.CourseDTO;
-import com.edumy.edumy.entity.Course;
-import com.edumy.edumy.entity.Review;
-import com.edumy.edumy.repository.CourseRepository;
-import com.edumy.edumy.repository.ReviewRepository;
+import com.edumy.dto.CourseDTO;
+import com.edumy.entity.Course;
+import com.edumy.entity.Review;
+import com.edumy.repository.CourseRepository;
+import com.edumy.repository.ReviewRepository;
 @RestController
 @RequestMapping("/courses")
 public class CourseController {

@@ -1,4 +1,4 @@
-package com.edumy.edumy.entity;
+package com.edumy.entity;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -14,32 +14,25 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+
 @Entity
-@Table(name = "feedbacks_for_instructors")
-public class Feedback {
+@Table(name = "reviews_for_courses")
+public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "feedback_id")
-    private Integer id;
-    public Instructor getInstructor() {
-        return instructor;
-    }
-    public void setInstructor(Instructor instructor) {
-        this.instructor = instructor;
-    }
+    @Column(name = "review_id")
+    private Integer reviewId;
     private Double rating;
-    private String feedback;
-
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "instructor_id", nullable = false)
+    @JoinColumn(name = "course_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    private Instructor instructor;
-    public Integer getFeedbackId() {
-        return id;
+    private Course course;
+    public Course getCourse() {
+        return course;
     }
-    public void setFeedbackId(Integer id) {
-        this.id = id;
+    public void setCourse(Course course) {
+        this.course = course;
     }
     public Double getRating() {
         return rating;
@@ -47,14 +40,21 @@ public class Feedback {
     public void setRating(Double rating) {
         this.rating = rating;
     }
-    public String getFeedback() {
-        return feedback;
+    private String review;
+    public Integer getReviewId() {
+        return reviewId;
     }
-    public void setFeedback(String feedback) {
-        this.feedback = feedback;
+    public void setReviewId(Integer reviewId) {
+        this.reviewId = reviewId;
     }
-    public Feedback() {
+    public String getReview() {
+        return review;
+    }
+    public void setReview(String review) {
+        this.review = review;
+    }
+    public Review() {
 
     }
-
+    
 }

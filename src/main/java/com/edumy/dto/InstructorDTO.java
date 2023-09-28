@@ -1,6 +1,6 @@
-package com.edumy.edumy.dto;
+package com.edumy.dto;
 
-import com.edumy.edumy.entity.Instructor;
+import com.edumy.entity.Instructor;
 
 public class InstructorDTO {
     

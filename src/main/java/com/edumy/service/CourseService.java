@@ -1,15 +1,15 @@
-package com.edumy.edumy.service;
+package com.edumy.service;
 
 import java.util.List;
 
-import com.edumy.edumy.dto.CourseDTO;
-import com.edumy.edumy.entity.Course;
+import com.edumy.dto.CourseDTO;
+import com.edumy.entity.Course;
 
 public interface CourseService {
     
     List<CourseDTO> getCourses();
     String addCourse(CourseDTO courseDTO);
-    Course getCourseById(int courseId);
+    CourseDTO getCourseById(int courseId);
     String updateCourseById(int courseId);
     String deleteCourseId(int courseId);
 

@@ -1,8 +1,8 @@
-package com.edumy.edumy.service;
+package com.edumy.service;
 
 import java.util.List;
 
-import com.edumy.edumy.dto.InstructorDTO;
+import com.edumy.dto.InstructorDTO;
 
 public interface InstructorService {
     List<InstructorDTO> getInstructorByCourseId(int courseId);

@@ -1,6 +1,6 @@
-package com.edumy.edumy.dto;
+package com.edumy.dto;
 
-import com.edumy.edumy.entity.Review;
+import com.edumy.entity.Review;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ReviewDTO {

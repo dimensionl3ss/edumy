@@ -1,8 +1,8 @@
-package com.edumy.edumy.repository;
+package com.edumy.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.edumy.edumy.entity.Course;
+import com.edumy.entity.Course;
 
 public interface CourseRepository extends JpaRepository<Course, Integer>{
     
