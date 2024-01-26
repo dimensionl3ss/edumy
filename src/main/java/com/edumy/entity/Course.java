@@ -35,7 +35,7 @@ public class Course {
     
     @ManyToMany(fetch = FetchType.LAZY,
       cascade = {
-          CascadeType.ALL
+        CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH
       })
     @JoinTable(name = "courses_by_instructors",
         joinColumns = { @JoinColumn(name = "course_id") },
@@ -50,7 +50,7 @@ public class Course {
     public void setId(Integer id) {
         this.id = id;
     }
-    public String getCourseName() {
+    public String getCourseName() { 
         return courseName;
     }
     public List<Instructor> getInstructors() {

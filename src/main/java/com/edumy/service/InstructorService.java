@@ -9,7 +9,9 @@ public interface InstructorService {
     List<CourseDTO> getCoursesByInstructorId(int instructorId);
     InstructorDTO getInstructorById(int instructorId);
     List<InstructorDTO> getInstructors();
-    String addInstructor(InstructorDTO instructorDTO);
+    InstructorDTO addInstructor(InstructorDTO instructorDTO);
     String deleteInstructor(int instructorId);
-    String updateInstructor(int instructorId);
+    InstructorDTO updateInstructor(InstructorDTO instructorDTO, int instructorId);
+    InstructorDTO assignCourse(int instructorId, int courseId);
+    InstructorDTO addCourseToInstructor(CourseDTO courseDTO, int instructorId);
 }

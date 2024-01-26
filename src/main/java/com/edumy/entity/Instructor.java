@@ -37,8 +37,8 @@ public class Instructor {
 
     @ManyToMany(fetch = FetchType.LAZY,
       cascade = {
-          CascadeType.ALL
-    },
+        CascadeType.PERSIST, CascadeType.MERGE
+    }, 
     mappedBy = "instructors")
     @JsonIgnore
     private List<Course> courses = new ArrayList<>();
