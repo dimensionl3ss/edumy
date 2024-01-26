@@ -7,16 +7,11 @@ public class InstructorDTO {
     private Integer id;
     private String instructorName;
     private String instructorEmail;
-    public String getInstructorEmail() {
-        return instructorEmail;
-    }
-    public void setInstructorEmail(String instructorEmail) {
-        this.instructorEmail = instructorEmail;
-    }
     private Long mobile;
     private String address;
     private Integer pincode;
     private String state;
+
     public Integer getId() {
         return id;
     }
@@ -28,6 +23,12 @@ public class InstructorDTO {
     }
     public void setInstructorName(String instructorName) {
         this.instructorName = instructorName;
+    }
+    public String getInstructorEmail() {
+        return instructorEmail;
+    }
+    public void setInstructorEmail(String instructorEmail) {
+        this.instructorEmail = instructorEmail;
     }
     public Long getMobile() {
         return mobile;
@@ -53,7 +54,6 @@ public class InstructorDTO {
     public void setState(String state) {
         this.state = state;
     }
-
     public static Instructor ValueOf(InstructorDTO instructorDTO) {
         Instructor instructor = new Instructor();
         instructor.setId(instructorDTO.getId());

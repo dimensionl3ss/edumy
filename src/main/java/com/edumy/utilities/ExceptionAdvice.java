@@ -1,4 +1,4 @@
-package com.edumy.edumy.utilities;
+package com.edumy.utilities;
 
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

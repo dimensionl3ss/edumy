@@ -1,4 +1,4 @@
-package com.edumy.edumy.utilities;
+package com.edumy.utilities;
 
 public class ErrorInfo {
     private int errorMess;

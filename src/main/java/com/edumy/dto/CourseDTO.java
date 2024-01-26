@@ -15,7 +15,7 @@ public class CourseDTO {
     private String courseName;
     private String description;
     private String level;
-
+    
     @JsonProperty("instructors")
     private List<InstructorDTO> instructorDTOs = new ArrayList<>();
     private Integer price;
